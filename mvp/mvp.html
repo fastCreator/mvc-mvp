@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <script src="./event.js"></script>
+    <script src="./view/input.js"></script>
+    <script src="./view/span.js"></script>
+    <script src="./presenter/addValue.js"></script>
+    <script src="./model/span.js"></script>
+</head>
+
+<body>
+    <input type="text"><span id="span"></span>
+</body>
+<script>
+    var model = new modelSpan();
+
+    var vspan = new ViewSpan();
+    var vinput = new ViewInput();
+
+    var ctr = new Presenter(vspan, model);
+    vinput.setPresenter(ctr);
+    
+
+</script>
+
+</html>

@@ -1,6 +1,5 @@
 function ViewSpan(controller) {
-    this.controller = controller;
-    this.model = model;
+    this.controller = controller; 
     this.el = document.querySelector('span');
     this.listen();
 }
