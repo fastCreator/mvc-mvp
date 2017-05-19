@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <script type="text/javascript" src="./MVVM.js"></script>
+</head>
+
+<body id="app">
+
+</body>
+<script id="template" type="text/html">
+    <div>
+        <input type="text" m-on:keydown="add" m-model="inputValue"><span>{{arr.toString()}}</span>
+    </div>
+</script>
+<script>
+    new MVVM({
+        el: '#app',
+        template: '#template',
+        data: {
+            arr: [],
+            inputValue: ''
+        },
+        methods: {
+            add: function (e) {
+                if (e.keyCode == 13) {
+                    this.arr.push(this.inputValue);
+                    this.inputValue = '';
+                }
+
+            }
+        }
+    })
+
+</script>
+
+</html>
