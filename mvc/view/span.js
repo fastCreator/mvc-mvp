@@ -1,5 +1,6 @@
-function ViewSpan(controller) {
-    this.controller = controller; 
+function ViewSpan(controller, model) {
+    this.controller = controller;
+    this.model = model;
     this.el = document.querySelector('span');
     this.listen();
 }
@@ -12,7 +13,7 @@ ViewSpan.prototype.setValue = function (val) {
 }
 ViewSpan.prototype.listen = function () {
     var that = this;
-    myEvent.on('add', function (val) {
+    this.model.on('add', function (val) {
         that.setValue(val);
     });
 }

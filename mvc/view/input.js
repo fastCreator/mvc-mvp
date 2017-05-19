@@ -1,5 +1,6 @@
-function ViewInput(controller) {
-    this.controller = controller; 
+function ViewInput(controller, model) {
+    this.controller = controller;
+    this.model = model;
     this.el = document.querySelector('input');
     this.initSubmit();
 }
@@ -13,7 +14,7 @@ ViewInput.prototype.initSubmit = function (event) {
     var that = this;
     this.el.onkeydown = function (e) {
         console.log(e.keyCode)
-        if (e.keyCode == 13) { 
+        if (e.keyCode == 13) {
             that.controller.addValue(that.getValue());
             that.setValue('');
         }

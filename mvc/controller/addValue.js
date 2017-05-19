@@ -1,4 +1,4 @@
-function Controller(model) { 
+function Controller(model) {
     this.model = model;
 }
 Controller.prototype.addValue = function (value) {
